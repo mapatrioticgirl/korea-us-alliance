@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stronger Together: Keep U.S. Troops in Korea</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-900 text-white py-6">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">Stronger Together: Keep U.S. Troops in Korea</h1>
+      <p class="mt-2">Protecting Peace, Security, and Our Shared Future</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-2">Why This Matters</h2>
+      <p class="mb-4">The U.S.–South Korea alliance has protected peace in East Asia for over 70 years. Withdrawing American troops now would undermine stability, embolden adversaries, and dishonor the legacy of those who fought in the Korean War. Help us urge Congress to maintain this vital alliance.</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-2">Take Action: Email Your Representative</h2>
+      <p class="mb-4">Use the form below to find your representative and send a pre-written email urging them to support continued U.S. military presence in South Korea.</p>
+      <form id="email-form" class="bg-white p-4 rounded shadow">
+        <label class="block mb-2 font-bold">Your Full Address:</label>
+        <input type="text" id="address" class="w-full border border-gray-300 rounded p-2 mb-4" placeholder="123 Main St, City, State ZIP">
+        <button type="button" onclick="findRepresentative()" class="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded">Find Representative</button>
+      </form>
+      <div id="representative-result" class="mt-4"></div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-2">Email Template</h2>
+      <textarea id="email-template" class="w-full h-60 border border-gray-300 rounded p-4" readonly>
+Dear [Senator/Representative] [Last Name],
+
+I am a proud Korean American and a concerned U.S. citizen writing to express my strong opposition to any proposal or policy that would reduce or withdraw American troops stationed in South Korea.
+
+The U.S.–South Korea alliance is not only a 70-year-old partnership built on shared values, but a cornerstone of peace and security in the Indo-Pacific region. The presence of U.S. forces in Korea:
+
+- Deters North Korean aggression
+- Ensures regional stability
+- Honors our Korean War veterans
+- Enhances global defense readiness
+
+Withdrawing troops would embolden adversaries and undermine U.S. credibility. I urge you to stand firm in supporting continued military cooperation with South Korea, including maintaining our current troop presence.
+
+Sincerely,
+[Your Name]
+[Your ZIP Code]      
+      </textarea>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-2">Share This Campaign</h2>
+      <p class="mb-4">Post on social media with the hashtag <strong>#StrongerTogether</strong> and tag your representatives. Let your friends and family know they can take action too!</p>
+    </section>
+  </main>
+
+  <footer class="bg-blue-900 text-white py-4">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      &copy; 2025 Korean American Alliance for Security. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function findRepresentative() {
+      const address = document.getElementById("address").value;
+      if (!address) {
+        alert("Please enter your address.");
+        return;
+      }
+      // Redirect to official site for now
+      const query = encodeURIComponent(address);
+      const url = `https://www.commoncause.org/find-your-representative/?addr=${query}`;
+      window.open(url, '_blank');
+      document.getElementById("representative-result").innerHTML = `📬 Please use this <a href="${url}" target="_blank" class="text-blue-700 underline">link</a> to find your representative and copy their email address to use with the template above.`;
+    }
+  </script>
+</body>
+</html>
